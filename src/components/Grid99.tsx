@@ -1,6 +1,11 @@
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { useTheme } from "next-themes";
 
-const Nine = ({ color = "bg-slate-300 dark:bg-slate-700" }: { color?: string }) => {
+const Nine = ({ activeRow }: { activeRow: number }) => {
+  const { theme } = useTheme();
+
   const pattern = [
     [1, 1, 1, 1],
     [1, 1, 1, 1],
@@ -13,11 +18,19 @@ const Nine = ({ color = "bg-slate-300 dark:bg-slate-700" }: { color?: string }) 
     <div className="grid grid-cols-4 gap-[4px] shrink-0">
       {pattern.flatMap((row, rowIndex) =>
         row.map((cell, cellIndex) => (
-          <div
+          <motion.div
             key={`${rowIndex}-${cellIndex}`}
-            className={`w-[13px] h-[13px] rounded-[1.5px] ${
-              cell ? color : "bg-transparent"
-            }`}
+            animate={{
+              backgroundColor: cell
+                ? (rowIndex === activeRow
+                  ? (theme === 'dark' ? "#FFFFFF" : "#808080")
+                  : (theme === 'dark' ? "rgba(219, 198, 198, 0.64)" : "rgba(139, 153, 174, 0.3)"))
+                : "rgba(0,0,0,0)",
+              opacity: cell ? (rowIndex === activeRow ? 1 : 0.6) : 0,
+              scale: rowIndex === activeRow ? 1.1 : 1,
+            }}
+            transition={{ duration: 0.1 }}
+            className={`w-[18px] h-[18px] rounded-[1.5px]`}
           />
         ))
       )}
@@ -25,11 +38,20 @@ const Nine = ({ color = "bg-slate-300 dark:bg-slate-700" }: { color?: string }) 
   );
 };
 
-export const Grid99 = ({ className, color }: { className?: string; color?: string }) => {
+export const Grid99 = ({ className }: { className?: string }) => {
+  const [activeRow, setActiveRow] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveRow((prev) => (prev + 1) % 6);
+    }, 400);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className={`flex gap-8 select-none pointer-events-none transition-all duration-500 ${className}`}>
-      <Nine color={color} />
-      <Nine color={color} />
+      <Nine activeRow={activeRow} />
+      <Nine activeRow={activeRow} />
     </div>
   );
 };

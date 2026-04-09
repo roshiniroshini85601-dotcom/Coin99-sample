@@ -1,45 +1,62 @@
-import { ArrowUpRight } from "lucide-react";
+"use client";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence, circIn } from "framer-motion";
+import { useBranding } from "./BrandingContext";
 
-const HeroCard = () => {
-    return (
-        <div className="bg-white border border-gray-200 rounded-[20px] shadow-xl p-2 relative transition-all overflow-hidden w-full">
-            
-            <div className="relative w-full aspect-[1.8/1] rounded-[16px] overflow-hidden bg-gradient-to-br from-[#4C40F2] via-[#3B5BFF] to-[#1E2BFF] flex items-center justify-center">
-                <div className="absolute inset-0 opacity-20 pointer-events-none">
-                    <svg width="100%" height="100%" viewBox="0 0 400 200" fill="none">
-                        <circle cx="200" cy="200" r="80" stroke="white" strokeWidth="1" />
-                        <circle cx="200" cy="200" r="100" stroke="white" strokeWidth="1" />
-                        <circle cx="200" cy="200" r="120" stroke="white" strokeWidth="1" />
-                        <circle cx="200" cy="200" r="140" stroke="white" strokeWidth="1" />
-                        <circle cx="200" cy="200" r="160" stroke="white" strokeWidth="1" />
-                        <circle cx="200" cy="200" r="180" stroke="white" strokeWidth="1" />
-                        <circle cx="200" cy="200" r="200" stroke="white" strokeWidth="1" />
-                        <circle cx="200" cy="200" r="220" stroke="white" strokeWidth="1" />
-                    </svg>
-                </div>
+const cardList = [
+  { id: 1, title: "TOKEN", image: "/Token.svg" },
+  { id: 2, title: "BUSINESS", image: "/BUSS.svg" },
+  { id: 3, title: "EXCHANGE", image: "/CEX.svg" },
+  { id: 4, title: "FUND ME", image: "/Fundme.svg" },
+  { id: 5, title: "COIN99 PAY", image: "/PAY.svg" },
+  { id: 6, title: "BLOCKCHAIN", image: "/BLK.svg" },
+];
 
-                <span className="text-white text-5xl md:text-6xl font-bold tracking-tight transform scale-y-[1.15]">
-                    C99
-                </span>
-            </div>
+export const HeroCard = () => {
+  const [index, setIndex] = useState(0);
+  const { setActiveTitle } = useBranding();
 
-            <div className="px-3 py-4 flex justify-between items-start bg-white">
-                <div className="text-left w-full">
-                    <h3 className="text-[13px] font-bold text-slate-900 uppercase tracking-tight">
-                        Coin99 Token
-                    </h3>
-                    <p className="text-gray-400 text-[10px] sm:text-[11px] mt-1 font-medium leading-tight">
-                        Create and manage your own digital assets effortlessly
-                    </p>
-                </div>
+  useEffect(() => {
+    setActiveTitle(cardList[index].title);
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % cardList.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, [index, setActiveTitle]);
 
-                <div className="text-slate-900 hover:text-blue-600 cursor-pointer transition-colors pt-0.5">
-                    <ArrowUpRight size={22} strokeWidth={1.5} />
-                </div>
-            </div>
-            
-        </div>
-    );
+  return (
+    <div className="relative w-full max-w-[800px] h-[350px] md:h-[300px] md:w-[400px] lg:h-[350px] lg:w-[500px] lg:mt-[-30px] mx-auto flex items-center justify-center pt-20">
+      <AnimatePresence mode="popLayout">
+        {cardList.map((card, i) => {
+          const offset = (i - index + cardList.length) % cardList.length;
+
+          if (offset > 3) return null;
+
+          return (
+            <motion.div
+              key={card.id}
+              initial={{ opacity: 0, scale: 0.9, y: -40 }}
+              animate={{
+                opacity: 1 - offset * 0.3,
+                scale: 1 - offset * 0.05,
+                zIndex: cardList.length - offset,
+                y: offset * -28,
+              }}
+              exit={{ opacity: 0, y: 500, transition: { duration: 0.2 } }}
+              transition={{ type: "spring"}}
+              className="absolute w-full h-full flex items-center justify-center pointer-events-none"
+            >
+              <img
+                src={card.image}
+                alt={card.title}
+                className="w-full h-full object-contain filter "
+              />
+            </motion.div>
+          );
+        })}
+      </AnimatePresence>
+    </div>
+  );
 };
 
 export default HeroCard;

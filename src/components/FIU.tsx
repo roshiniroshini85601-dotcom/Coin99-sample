@@ -2,7 +2,7 @@ import React from "react";
 
 const FIU = () => {
   return (
-    <section className="relative w-full py-24 md:py-32 bg-[#4F5B6E] dark:bg-[#000616] overflow-hidden transition-colors duration-500">
+    <section className="relative w-full py-8 md:py-32 px-4 md:px-6 bg-[#4F5B6E] dark:bg-[#06080E] overflow-hidden transition-colors duration-500">
 
       <div className="absolute inset-0 z-0">
         <img

@@ -4,20 +4,20 @@ import { CryptoGrid } from "@/components/CryptoGrid";
 
 const PowerSection = () => {
   return (
-    <section className="relative py-16 md:py-24 px-6 bg-[#EEF1F6] dark:bg-[#000616] overflow-hidden transition-colors duration-500">
+    <section className="relative py-8 md:py-24 px-4 md:px-6 bg-[#EEF1F6] dark:bg-[#06080E] overflow-hidden transition-colors duration-500">
 
       <div className="relative z-10 max-w-7xl mx-auto">
-        <div className="relative flex flex-col lg:flex-row items-center lg:items-end justify-between mb-20 md:mb-32 text-center lg:text-left">
+        <div className="relative flex flex-col lg:flex-row items-center lg:items-end justify-between mb-6 md:mb-32 text-center lg:text-left">
 
-          <div className="relative">
-            <h1 className="text-3xl text-start font-bold md:text-6xl font-black leading-[1.1] text-black dark:text-white uppercase max-w-3xl tracking-normal">
+          <div className="relative w-full flex flex-col items-start text-left">
+            <h1 className="text-3xl lg:text-[70px] md:text-[46px] md:font-bold md:leading-[70px] text-black dark:text-white uppercase max-w-7xl tracking-normal">
               POWER YOUR IDEAS WITH AN <br />
               <span className="text-blue-600">ALL-IN-ONE</span> CRYPTO <br />
               PLATFORM <span className="text-blue-600 inline-flex items-start ml-1"><sup className="text-sm md:text-xl">99</sup></span>
             </h1>
           </div>
 
-          <div className="mt-10 lg:mt-0 opacity-40 dark:opacity-20 shrink-0 transform scale-90 md:scale-150 transition-transform">
+          <div className="hidden md:block mt-10 lg:mt-0 opacity-40 dark:opacity-20 shrink-0 transform md:scale-[0.6] lg:scale-[1.3] md:absolute md:-right-4 md:top-4 transition-transform">
             <Grid99 className="" />
           </div>
         </div>
@@ -37,7 +37,9 @@ const PowerSection = () => {
         </div>
       </div>
 
-      <CryptoGrid />
+      <div className="-mx-6">
+        <CryptoGrid />
+      </div>
     </section>
   );
 };

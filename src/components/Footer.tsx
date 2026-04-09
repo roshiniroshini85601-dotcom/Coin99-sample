@@ -4,12 +4,12 @@ import Grid99 from './Grid99';
 
 const Footer = () => {
     return (
-        <footer className="relative bg-[#EAEEF2] dark:bg-[#000616] pt-24 pb-12 px-10 font-sans overflow-hidden transition-colors duration-500">
+        <footer className="relative bg-[#EAEEF2] dark:bg-[#06080E] pt-12 md:pt-24 pb-8 md:pb-12 px-4 md:px-10 font-sans overflow-hidden transition-colors duration-500">
             <div className="max-w-7xl mx-auto">
-                <div className="flex flex-col lg:flex-row justify-between gap-20 mb-20 text-black dark:text-white">
+                <div className="flex flex-col lg:flex-row justify-between gap-10 md:gap-20 mb-10 md:mb-20 text-black dark:text-white">
 
                     <div className="flex flex-col max-w-sm relative">
-                        <h2 className="text-4xl font-black text-black dark:text-white tracking-tighter mb-8 italic relative z-10">
+                        <h2 className="text-4xl font-black text-black dark:text-white tracking-tighter mb-8  relative z-10">
                             COIN<span className="text-blue-600">99</span>
                         </h2>
                         <p className="text-slate-500 dark:text-slate-400 text-[16px] leading-relaxed mb-12 font-medium relative z-10">
@@ -32,12 +32,12 @@ const Footer = () => {
                             </div>
                         </div>
 
-                        <div className="opacity-[0.25] dark:opacity-[0.15] -ml-2">
-                            <Grid99 className="scale-90 -mb-10" color="bg-slate-300 dark:bg-slate-700" />
+                        <div className="opacity-[0.25] dark:opacity-[0.15] md:hidden ">
+                            <Grid99 className="scale-90 -mb-10"/>
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-16 md:gap-28 lg:pr-10">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-28 lg:pr-10 md:mt-[-90px]">
                         <div className="space-y-4">
                             <h3 className="font-bold text-slate-900 dark:text-white text-[18px] mb-4">Products</h3>
                             <a href="#" className="block text-slate-500 dark:text-slate-400 text-[15px] font-medium hover:text-blue-600 transition-colors">C99 Token</a>
@@ -64,7 +64,7 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className="border-t border-dashed border-slate-400/50 dark:border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+                <div className="border-t border-dashed border-slate-400/50 dark:border-white/10 pt-8 flex flex-col md:mt-[-70px] md:flex-row justify-between items-center gap-6">
                     <div className="flex items-center gap-1.5 text-slate-400 text-[13px] font-medium tracking-tight">
                         <Copyright size={13} />
                         <p>2026 — Copyright. All Rights reserved</p>

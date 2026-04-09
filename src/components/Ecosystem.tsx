@@ -123,13 +123,13 @@ const Ecosystem = () => {
         return positions[posIndex];
     };
     return (
-        <section className="bg-white dark:bg-[#000616] py-20 px-6 transition-colors duration-500">
-            <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-10">
-                <div className="w-full md:w-[450px]">
-                    <h1 className="text-3xl font-semibold text-black dark:text-white uppercase leading-[1.1]">
+        <section className="bg-white dark:bg-[#06080E] py-8 md:py-20 px-4 md:px-6 transition-colors duration-500">
+            <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-10">
+                <div className="w-full lg:w-[450px]">
+                    <h1 className="text-3xl md:text-5xl font-black text-black dark:text-white uppercase leading-[0.95] tracking-tighter">
                         EXPLORE THE<br /> COIN<span className="text-blue-600">99</span> ECOSYSTEM
                     </h1>
-                    <p className="text-gray-400 dark:text-slate-400 text-sm mt-5 mb-10 leading-relaxed font-normal">
+                    <p className="text-gray-400 dark:text-slate-400 text-sm mt-6 mb-10 leading-relaxed font-normal max-w-md">
                         Discover a complete suite of tools designed to help you create
                         tokens, launch projects, trade assets, accept payments,
                         and build on blockchain — all within the Coin99 ecosystem.
@@ -149,20 +149,47 @@ const Ecosystem = () => {
                                     {activeIndex === idx ? (
                                         <ChevronUp size={18} className="text-blue-600 dark:text-blue-400" />
                                     ) : (
-                                        <ChevronDown size={18} className="text-black-300 dark:text-white/20 group-hover:text-black-300" />
+                                        <ChevronDown size={18} className="text-gray-300 dark:text-white/20 group-hover:text-blue-600" />
                                     )}
                                 </div>
-                                {activeIndex === idx && (
-                                    <p className="text-gray-400 dark:text-slate-400 text-[13px] mt-4 leading-relaxed animate-in slide-in-from-top-2 duration-300">
-                                        {item.desc}
-                                    </p>
-                                )}
+
+                                <AnimatePresence>
+                                    {activeIndex === idx && (
+                                        <motion.div
+                                            initial={{ height: 0, opacity: 0 }}
+                                            animate={{ height: "auto", opacity: 1 }}
+                                            exit={{ height: 0, opacity: 0 }}
+                                            transition={{ duration: 0.3, ease: "easeInOut" }}
+                                            className="overflow-hidden"
+                                        >
+                                            <p className="text-gray-400 dark:text-slate-400 text-[13px] mt-4 leading-relaxed">
+                                                {item.desc}
+                                            </p>
+
+
+                                            <div className="lg:hidden mt-8 mb-4 flex justify-center items-center scale-[0.85] sm:scale-90 md:scale-100 origin-top">
+                                                <div className="relative">
+                                                    <div className="absolute -inset-4 bg-blue-500/5 blur-3xl rounded-full"></div>
+                                                    <div className="relative z-10">
+                                                        {idx === 0 && <MainCard />}
+                                                        {idx === 1 && <NexusInfoCard />}
+                                                        {idx === 2 && <ParticipationCard />}
+                                                        {idx === 3 && <BusinessCard />}
+                                                        {idx === 4 && <MainCard />}
+                                                        {idx === 5 && <NexusInfoCard />}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
                             </div>
                         ))}
                     </div>
                 </div>
 
-                <div className="flex-1 h-[700px] relative overflow-hidden rounded-3xl bg-[#F8FAFC]/50 dark:bg-slate-900/10 transition-colors duration-500">
+
+                <div className="hidden lg:flex flex-1 h-[700px] relative overflow-hidden rounded-3xl bg-[#F8FAFC]/50 dark:bg-slate-900/10 transition-colors duration-500">
                     <div className="absolute inset-0 bg-[radial-gradient(#E2E8F0_1px,transparent_1px)] dark:bg-[radial-gradient(rgba(255,255,255,0.05)_1px,transparent_1px)] [background-size:32px_32px] opacity-40"></div>
 
                     <motion.div

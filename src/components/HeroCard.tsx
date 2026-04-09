@@ -5,7 +5,6 @@ const HeroCard = () => {
         <div className="bg-white border border-gray-200 rounded-[20px] shadow-xl p-2 relative transition-all overflow-hidden w-full">
             
             <div className="relative w-full aspect-[1.8/1] rounded-[16px] overflow-hidden bg-gradient-to-br from-[#4C40F2] via-[#3B5BFF] to-[#1E2BFF] flex items-center justify-center">
-
                 <div className="absolute inset-0 opacity-20 pointer-events-none">
                     <svg width="100%" height="100%" viewBox="0 0 400 200" fill="none">
                         <circle cx="200" cy="200" r="80" stroke="white" strokeWidth="1" />

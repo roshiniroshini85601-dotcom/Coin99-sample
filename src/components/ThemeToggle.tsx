@@ -14,7 +14,7 @@ export const ThemeToggle = () => {
     const isDark = theme === "dark";
 
     return (
-        <div className="fixed right-3 md:right-6 top-1/2 -translate-y-1/2 z-[100] flex flex-col items-center gap-1 bg-[#F0F2F5] dark:bg-[#0B1121] p-1.5 rounded-[14px] border border-slate-200 dark:border-white/5 transition-all duration-300 shadow-xl">
+        <div className="fixed right-3 md:right-6 top-1/2 -translate-y-1/2 z-[100] flex flex-col items-center gap-1 bg-[#F0F2F5] dark:bg-[#0B1121] p-1.5 rounded-[14px] border border-slate-200 dark:border-black transition-all duration-300 shadow-xl">
             
             <button
                 onClick={() => setTheme("light")}
@@ -31,7 +31,7 @@ export const ThemeToggle = () => {
                 onClick={() => setTheme("dark")}
                 className={`p-2 rounded-[10px] transition-all duration-300 ${
                     isDark 
-                    ? "bg-[#1C2230] text-blue-400 shadow-inner" 
+                    ? "bg-[black] text-blue-400 shadow-inner" 
                     : "text-slate-400 hover:text-slate-600 dark:text-slate-500 dark:hover:text-slate-300"
                 }`}
             >

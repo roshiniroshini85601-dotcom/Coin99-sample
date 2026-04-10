@@ -21,7 +21,7 @@ const Navbar = () => {
             </span>
           </Link>
 
-          <div className="hidden lg:flex items-center gap-10">
+          <div className="hidden lg:flex items-center gap-10 ml-50">
             <div className="flex items-center gap-12 cursor-pointer group">
               <span className="text-[16px] font-semibold text-[#0B0F1A] dark:text-white uppercase group-hover:text-blue-600 transition-colors">
                 Resources

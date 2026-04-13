@@ -102,7 +102,19 @@ export default function Cookie() {
     </>
   );
 }
-function CookieSettingItem({ title, description, isLocked = false, defaultEnabled = false }) {
+interface CookieSettingItemProps {
+  title: string;
+  description?: string;
+  isLocked?: boolean;
+  defaultEnabled?: boolean;
+}
+
+function CookieSettingItem({ 
+  title, 
+  description, 
+  isLocked = false, 
+  defaultEnabled = false 
+}: CookieSettingItemProps) {
   const [isEnabled, setIsEnabled] = useState(defaultEnabled || isLocked);
   const [isExpanded, setIsExpanded] = useState(false);
 

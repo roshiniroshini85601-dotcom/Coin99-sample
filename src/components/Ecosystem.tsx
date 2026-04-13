@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const Ecosystem = () => {
     const [activeIndex, setActiveIndex] = useState(0);
-
     const items = [
         { title: "C99 TOKEN", desc: "Trade with confidence using advanced tools, real-time data, and a secure trading environment." },
         { title: "FUNDME", desc: "Launch your projects with the support of a global community and institutional investors." },
@@ -123,11 +122,11 @@ const Ecosystem = () => {
         return positions[posIndex];
     };
     return (
-        <section className="bg-white dark:bg-[#06080E] py-8 md:py-20 px-4 md:px-6 transition-colors duration-500">
+        <section className=" bg-white dark:bg-[#06080E] py-8 md:py-20 px-4 md:px-6 transition-colors duration-500">
             <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-10">
-                <div className="w-full lg:w-[450px]">
-                    <h1 className="text-3xl md:text-5xl font-black text-black dark:text-white uppercase leading-[0.95] tracking-tighter">
-                        EXPLORE THE<br /> COIN<span className="text-blue-600">99</span> ECOSYSTEM
+                <div className="lg:ml-[-40px] w-full lg:w-[450px]">
+                    <h1 className="text-3xl font-semibold lg:w-[500px] md:text-5xl font-black text-black dark:text-white uppercase leading-[0.95] tracking-tighter">
+                        EXPLORE THE <br /> COIN <span className="text-blue-600">99</span> ECOSYSTEM
                     </h1>
                     <p className="text-gray-400 dark:text-slate-400 text-sm mt-6 mb-10 leading-relaxed font-normal max-w-md">
                         Discover a complete suite of tools designed to help you create

@@ -1,10 +1,11 @@
 import React from "react";
 import Grid99 from "@/components/Grid99";
 import { CryptoGrid } from "@/components/CryptoGrid";
+import Cookie from "@/components/Cookie";
 
 const PowerSection = () => {
   return (
-    <section className="relative py-8 md:py-24 px-4 md:px-6 bg-[#EEF1F6] dark:bg-[#06080E] overflow-hidden transition-colors duration-500">
+    <section className="relative py-8 md:py-24 px-4 md:px-6 bg-[#EEF1F6] dark:bg-[#000A24] overflow-hidden transition-colors duration-500">
 
       <div className="relative z-10 max-w-7xl mx-auto">
         <div className="relative flex flex-col lg:flex-row items-center lg:items-end justify-between mb-6 md:mb-32 text-center lg:text-left">
@@ -18,7 +19,7 @@ const PowerSection = () => {
           </div>
 
           <div className="hidden md:block mt-10 lg:mt-0 opacity-40 dark:opacity-20 shrink-0 transform md:scale-[0.6] lg:scale-[1.3] md:absolute md:-right-4 md:top-4 transition-transform">
-            <Grid99 className="" />
+            <Grid99 className="lg:w-[200px] lg:mt-[100px] lg:mr-[150px]" />
           </div>
         </div>
 
@@ -40,6 +41,7 @@ const PowerSection = () => {
       <div className="-mx-6">
         <CryptoGrid />
       </div>
+      <Cookie />
     </section>
   );
 };

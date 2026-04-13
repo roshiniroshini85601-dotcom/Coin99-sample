@@ -12,16 +12,16 @@ const Journey = () => {
         return () => clearInterval(timer);
     }, []);
     return (
-        <section className="relative bg-[#F4F7FB] dark:bg-[#06080E] py-6 md:py-16 overflow-hidden w-full flex flex-col items-center transition-colors duration-500">
+        <section className="relative bg-[#F4F7FB] dark:bg-[#000A24]  py-6 md:py-16 overflow-hidden w-full flex flex-col items-center transition-colors duration-500">
 
             <div
-                className="absolute inset-0 opacity-[0.2] dark:opacity-[0.35] pointer-events-none bg-center bg-cover bg-no-repeat scale-90 transition-opacity duration-500"
+                className="absolute inset-0 opacity-[0.2] dark:md:w-[120%] lg:mt-[-10%] lg:mb-[-10%] dark:md:ml-[-10%] dark:md:mt-[-5%] dark:mb-[-5%] dark:opacity-[0.35] pointer-events-none bg-center bg-cover bg-no-repeat  scale-90 transition-opacity duration-500"
                 style={{ backgroundImage: "url('/waves.png')" }}
             >
             </div>
 
             <div className="relative z-10 w-full flex justify-center items-center  py-4 md:py-8 max-w-7xl mx-auto min-h-[200px] md:min-h-[420px]">
-                <div className=" relative w-[130px] md:w-[200px] lg:w-[380px] h-auto flex justify-center items-center opacity-[0.95]">
+                <div className=" relative w-[120px] md:w-[200px] lg:w-[380px] h-auto flex justify-center items-center opacity-[0.95]">
                     <Image
                         src="/99.png"
                         alt="99 Brand"
@@ -32,7 +32,7 @@ const Journey = () => {
                     />
                 </div>
 
-                <div className="absolute top-[5%] md:top-[20%] left-[2%] md:left-[8%] w-[100px] md:w-[200px] transform hover:scale-105 transition-transform duration-500 z-20">
+                <div className="lg:w-[260px] lg:h-[142px] md:w-[150px] md:h-[86px] w-[90px] h-[50px]  absolute top-[5%] md:top-[20%] left-[2%] md:left-[8%] transform hover:scale-105 transition-transform duration-500 z-20">
                     <AnimatePresence mode='wait'>
                         <motion.div
                             key={Flip ? "silver" : "gold"}
@@ -45,7 +45,7 @@ const Journey = () => {
                             <Image
                                 src={Flip ? "/Silver 1.png" : "/Gold 1.png"}
                                 alt="Silver Wallet Card"
-                                width={250}
+                                width={800}
                                 height={125}
                                 className="w-full h-auto drop-shadow-md"
                             />
@@ -53,7 +53,7 @@ const Journey = () => {
                     </AnimatePresence>
                 </div>
 
-                <div className="absolute top-[70%] mb-[150px]  md:top-[55%] right-[2%] md:right-[8%] w-[100px] md:w-[200px] transform hover:scale-105 transition-transform duration-500 z-20">
+                <div className="  lg:w-[260px] lg:h-[142px] md:w-[150px] md:h-[86px] w-[90px] h-[50px]  absolute top-[70%] mb-[150px]  md:top-[55%] right-[2%] md:right-[8%] transform hover:scale-105 transition-transform duration-500 z-20">
                     <AnimatePresence mode='wait'>
                         <motion.div
                             key={Flip ? "gold" : "silver"}
@@ -75,14 +75,14 @@ const Journey = () => {
                 </div>
             </div>
 
-            <div className="relative z-30 flex flex-col md:flex-row items-center gap-4 md:gap-8 mt-2 w-full justify-center px-6">
-                <div className="text-center md:text-left">
-                    <h2 className="text-[18px] md:text-[32px] max-w-[300px] md:max-w-4xl font-bold text-black dark:text-white tracking-wide uppercase leading-[1.1]">
+            <div className="relative z-30 flex flex-col md:flex-row items-center gap-4 lg:gap-15 lg:ml-[100px] md:gap-8 mt-2  justify-center px-6">
+                <div className="text-center md:text-left flex-shrink-0">
+                    <h2 className="text-[15px] w-[100px] lg:text-[50px] whitespace-nowrap w-max lg:ml-[-100px] md:text-[28px] font-bold text-black dark:text-white tracking-wide uppercase leading-[1.1]">
                         START YOUR INDIAN CRYPTO JOURNEY
                     </h2>
                 </div>
 
-                <button className="bg-white dark:bg-slate-800/10 border-[1px] border-black dark:border-white/20 text-blue-600 dark:text-blue-400 font-bold px-8 py-3 rounded-lg hover:bg-blue-50 dark:hover:bg-white/5 transition-all duration-300 shadow-sm active:scale-95 text-md">
+                <button className="  pl-[10px] bg-white dark:bg-slate-800/10 lg:px-4 border-[1px] border-black dark:border-white/20 text-blue-600 dark:text-blue-400 font-bold px-8 py-3 rounded-lg hover:bg-blue-50 dark:hover:bg-white/5 transition-all duration-300 shadow-sm active:scale-95 text-md">
                     Sign Up
                 </button>
             </div>

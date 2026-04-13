@@ -32,12 +32,13 @@ const Footer = () => {
                             </div>
                         </div>
 
-                        <div className="opacity-[0.25] dark:opacity-[0.15] md:hidden ">
+
+                        <div className="opacity-[0.25] dark:opacity-[0.15] lg:block lg:h-[120px] md:hidden ">
                             <Grid99 className="scale-90 -mb-10"/>
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-28 lg:pr-10 md:mt-[-90px]">
+                    <div className="grid grid-cols-1 lg:mt-[10px] md:grid-cols-3 gap-16 md:gap-28 lg:pr-10 md:mt-[-90px]">
                         <div className="space-y-4">
                             <h3 className="font-bold text-slate-900 dark:text-white text-[18px] mb-4">Products</h3>
                             <a href="#" className="block text-slate-500 dark:text-slate-400 text-[15px] font-medium hover:text-blue-600 transition-colors">C99 Token</a>
@@ -68,7 +69,7 @@ const Footer = () => {
                     <div className="flex items-center gap-1.5 text-slate-400 text-[13px] font-medium tracking-tight">
                         <Copyright size={13} />
                         <p>2026 — Copyright. All Rights reserved</p>
-                    </div>
+                </div>
 
                     <div className="flex items-center gap-8">
                         <a href="#" className="text-slate-500 dark:text-slate-400 text-[14px] font-medium hover:text-blue-600 underline transition-colors">Privacy policy</a>

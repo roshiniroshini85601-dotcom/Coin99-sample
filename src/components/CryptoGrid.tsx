@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-
 const cryptoData = [
   { name: "Solana", symbol: "SOL", price: "₹4,85,320", change: "+2.45%", icon: "/sol.png" },
   { name: "Tether", symbol: "USDT", price: "₹4,85,320", change: "+2.45%", icon: "/tet.png" },

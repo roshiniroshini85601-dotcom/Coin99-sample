@@ -14,26 +14,24 @@ export const ThemeToggle = () => {
     const isDark = theme === "dark";
 
     return (
-        <div className="fixed right-3 md:right-6 top-1/2 -translate-y-1/2 z-[100] flex flex-col items-center gap-1 bg-[#F0F2F5] dark:bg-[#0B1121] p-1.5 rounded-[14px] border border-slate-200 dark:border-black transition-all duration-300 shadow-xl">
-            
+        <div className="fixed right-3 md:right-6 top-1/2 -translate-y-1/2 z-[100] flex flex-col items-center gap-1 bg-[#F0F2F5] dark:bg-[#0B1121] p-1.5 rounded-[14px] border border-slate-200 dark:border-black transition-all duration-300 shadow-xl  hidden lg:flex md:hidden ">
+
             <button
                 onClick={() => setTheme("light")}
-                className={`p-2 rounded-[10px] transition-all duration-300 ${
-                    isLight 
-                    ? "bg-white text-slate-900 shadow-sm ring-1 ring-slate-100" 
-                    : "text-slate-400 hover:text-slate-600 dark:text-slate-500 dark:hover:text-slate-300"
-                }`}
+                className={`p-2 rounded-[10px] transition-all duration-300 ${isLight
+                        ? "bg-white text-slate-900 shadow-sm ring-1 ring-slate-100"
+                        : "text-slate-400 hover:text-slate-600 dark:text-slate-500 dark:hover:text-slate-300"
+                    }`}
             >
                 <Sun size={16} strokeWidth={2.5} />
             </button>
 
             <button
                 onClick={() => setTheme("dark")}
-                className={`p-2 rounded-[10px] transition-all duration-300 ${
-                    isDark 
-                    ? "bg-[black] text-blue-400 shadow-inner" 
-                    : "text-slate-400 hover:text-slate-600 dark:text-slate-500 dark:hover:text-slate-300"
-                }`}
+                className={`p-2 rounded-[10px] transition-all duration-300 ${isDark
+                        ? "bg-[black] text-blue-400 shadow-inner"
+                        : "text-slate-400 hover:text-slate-600 dark:text-slate-500 dark:hover:text-slate-300"
+                    }`}
             >
                 <Moon size={16} strokeWidth={2.5} />
             </button>

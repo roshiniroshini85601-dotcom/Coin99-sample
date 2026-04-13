@@ -8,7 +8,7 @@ const Hero = () => {
 
       <div className="absolute inset-0 z-0 pointer-events-none max-w-[1440px] mx-auto w-full">
         <Grid99 className="absolute top-[40%] md:top-[35%] lg:top-[22%] -left-[5%] md:left-3 lg:left-12 scale-[0.6] md:scale-[0.7] lg:scale-100 opacity-30 dark:opacity-15" />
-        <Grid99 className=" absolute top-[85%] left-[50%] md:top-[75%] md:left-[85%] lg:top-[60%] -right-[5%] md:right-2 lg:right-12 scale-[0.6] md:scale-[0.7] lg:scale-100 opacity-30 dark:opacity-15" />
+        <Grid99 className=" absolute top-[85%] left-[50%] md:top-[75%] lg:left-[85%] md:left-[75%] lg:top-[60%] -right-[5%] md:right-2 lg:right-12 scale-[0.6] md:scale-[0.7] lg:scale-100 opacity-30 dark:opacity-15" />
       </div>
 
       <div className="relative z-10 max-w-5xl text-center flex flex-col items-center">
@@ -21,12 +21,12 @@ const Hero = () => {
           Coin99 brings together token creation, launchpads, trading, payments, <br className="hidden md:block" />
           and blockchain infrastructure into a single powerful ecosystem.
         </p>
+
         <Cookie/>
         <div className="w-full mt-4">
           <HeroCard />
         </div>
       </div>
-
     </section>
   );
 };

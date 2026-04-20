@@ -1,6 +1,7 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
+
 const cryptoData = [
   { name: "Solana", symbol: "SOL", price: "₹4,85,320", change: "+2.45%", icon: "/sol.png" },
   { name: "Tether", symbol: "USDT", price: "₹4,85,320", change: "+2.45%", icon: "/tet.png" },
@@ -9,9 +10,11 @@ const cryptoData = [
   { name: "Ethereum", symbol: "ETH", price: "₹4,85,320", change: "+2.45%", icon: "/eth.png" },
   { name: "Cosmos", symbol: "ATOM", price: "₹4,85,320", change: "+2.45%", icon: "/cs.png" },
 ];
-const CoinCard = ({ coin }: any) => (
-  <div className="flex-shrink-0 w-[236px] min-h-[106px] bg-[#DDE3ED] dark:bg-[#1C2230]/40 rounded-[12px] pt-[14px] pb-[14px] px-[13px] border border-[#9AA6B2] dark:border-[#2F3747] flex flex-col gap-[12px] hover:shadow-md dark:shadow-[0_0_12px_rgba(0,0,0,0.14)] transition-all duration-300 mx-1.5 overflow-hidden">
 
+const CoinCard = ({ coin }: any) => (
+  <motion.div
+    className="flex-shrink-0 w-[236px] min-h-[106px] bg-[#DDE3ED] dark:bg-[#1C2230]/40 rounded-[12px] pt-[14px] pb-[14px] px-[13px] border border-[#9AA6B2] dark:border-[#2F3747] flex flex-col gap-[12px] hover:shadow-xl dark:shadow-[0_0_12px_rgba(0,0,0,0.14)] transition-all duration-300 mx-1.5 overflow-hidden cursor-pointer"
+  >
     <div className="flex items-center gap-3">
       <div className="w-[32px] h-[32px] bg-white/10 rounded-full overflow-hidden flex-shrink-0 shadow-sm border border-white/5">
         <img src={coin.icon} alt={coin.name} className="w-full h-full object-contain" />
@@ -29,36 +32,31 @@ const CoinCard = ({ coin }: any) => (
         <span>{coin.change}</span>
       </div>
     </div>
-  </div>
+  </motion.div>
 );
 
 export function CryptoGrid() {
-  const [row1Paused, setRow1Paused] = useState(false);
-  const [row2Paused, setRow2Paused] = useState(false);
-
   const items = [...cryptoData, ...cryptoData, ...cryptoData];
 
   return (
-    <div className="w-full relative overflow-hidden py-10">
+    <div className="w-full relative overflow-hidden py-10 flex flex-col gap-6 ">
 
-      <div onMouseEnter={() => setRow1Paused(true)} onMouseLeave={() => setRow1Paused(false)} className="mb-6">
-        <motion.div
-          className="flex"
-          animate={row1Paused ? {} : { x: ["0%", "-33.33%"] }}
-          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-        >
-          {items.map((coin, index) => <CoinCard key={index} coin={coin} />)}
-        </motion.div>
+      {/* Row 1 */}
+      <div className="w-full overflow-hidden">
+        <div className="flex w-max anim-marquee hover-pause">
+          {items.map((coin, index) => (
+            <CoinCard key={`r1-${index}`} coin={coin} />
+          ))}
+        </div>
       </div>
 
-      <div onMouseEnter={() => setRow2Paused(true)} onMouseLeave={() => setRow2Paused(false)}>
-        <motion.div
-          className="flex"
-          animate={row2Paused ? {} : { x: ["-33.33%", "0%"] }}
-          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-        >
-          {[...items].reverse().map((coin, index) => <CoinCard key={index} coin={coin} />)}
-        </motion.div>
+      {/* Row 2 */}
+      <div className="w-full overflow-hidden">
+        <div className="flex w-max anim-marquee-reverse hover-pause ml-[-200px]">
+          {items.map((coin, index) => (
+            <CoinCard key={`r2-${index}`} coin={coin} />
+          ))}
+        </div>
       </div>
 
     </div>

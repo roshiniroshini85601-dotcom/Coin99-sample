@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Cookie from "@/components/Cookie";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { BrandingProvider } from "@/components/BrandingContext";
@@ -27,6 +28,7 @@ export default function RootLayout({
             <ThemeToggle /> 
             <Navbar />
             {children}
+            <Cookie />
           </BrandingProvider>
         </ThemeProvider>
       </body>

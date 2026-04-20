@@ -13,7 +13,7 @@ const FIU = () => {
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-4 flex flex-col items-center text-center">
-        <h1 className="text-3xl md:text-[42px] font-bold uppercase tracking-wide mb-4 drop-shadow-md text-white">
+        <h1 className="text-[28px] md:text-[32px] lg:text-[54px] font-bold uppercase tracking-wide mb-4 drop-shadow-md text-white">
           FIU COMPLIANCE IN BANGALORE
         </h1>
 

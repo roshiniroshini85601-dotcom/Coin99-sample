@@ -6,7 +6,7 @@ type BrandingContextType = {
   setActiveTitle: (title: string) => void;
 };
 
-const BrandingContext = createContext<BrandingContextType | undefined>(undefined);
+const BrandingContext = createContext<BrandingContextType | undefined>(undefined); //empty container
 export function BrandingProvider({ children }: { children: React.ReactNode }) {
   const [activeTitle, setActiveTitle] = useState("TOKEN");
 

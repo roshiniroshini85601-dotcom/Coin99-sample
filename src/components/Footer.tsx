@@ -1,3 +1,4 @@
+'use client';
 import { FaTwitter, FaGithub, FaYoutube, FaInstagram } from 'react-icons/fa';
 import { Copyright } from "lucide-react";
 import Grid99 from './Grid99';
@@ -34,7 +35,7 @@ const Footer = () => {
 
 
                         <div className="opacity-[0.25] dark:opacity-[0.15] lg:block lg:h-[120px] md:hidden ">
-                            <Grid99 className="scale-90 -mb-10"/>
+                            <Grid99 className="scale-90 -mb-10" />
                         </div>
                     </div>
 
@@ -69,12 +70,17 @@ const Footer = () => {
                     <div className="flex items-center gap-1.5 text-slate-400 text-[13px] font-medium tracking-tight">
                         <Copyright size={13} />
                         <p>2026 — Copyright. All Rights reserved</p>
-                </div>
+                    </div>
 
                     <div className="flex items-center gap-8">
                         <a href="#" className="text-slate-500 dark:text-slate-400 text-[14px] font-medium hover:text-blue-600 underline transition-colors">Privacy policy</a>
                         <a href="#" className="text-slate-500 dark:text-slate-400 text-[14px] font-medium hover:text-blue-600 underline transition-colors">Terms of service</a>
-                        <a href="#" className="text-slate-500 dark:text-slate-400 text-[14px] font-medium hover:text-blue-600 underline transition-colors">Cookie Settings</a>
+                        <button 
+                            onClick={() => (window as any).openCookieSettings?.()}
+                            className="text-slate-500 dark:text-slate-400 text-[14px] font-medium hover:text-blue-600 underline transition-colors"
+                        >
+                            Cookie Settings
+                        </button>
                     </div>
                 </div>
             </div>

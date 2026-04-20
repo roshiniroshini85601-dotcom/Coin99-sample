@@ -2,17 +2,43 @@
 @import "tailwindcss";
 
 @variant dark (&:where(.dark, .dark *));
+
 @theme {
   --font-chillax: "Chillax", sans-serif;
   --font-metropolis: "Metropolis", sans-serif;
 }
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.33%); }
+}
+
+@keyframes marquee-reverse {
+  0% { transform: translateX(-33.33%); }
+  100% { transform: translateX(0); }
+}
+
+.anim-marquee {
+  animation: marquee 35s linear infinite;
+}
+
+.anim-marquee-reverse {
+  animation: marquee-reverse 35s linear infinite;
+}
+
+.hover-pause:hover {
+  animation-play-state: paused;
+}
+
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
 @font-face {
   font-family: 'Metropolis';
   src: url('/fonts/Metropolis/Metropolis-Regular.otf') format('opentype');
@@ -47,4 +73,3 @@
   font-weight: 900;
   font-style: normal;
 }
-

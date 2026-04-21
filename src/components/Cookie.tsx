@@ -28,7 +28,13 @@ export default function Cookie() {
       <div className="fixed right-10 bottom-10 z-[10001] cursor-pointer">
         {!isOpen && !isModelOpen && (
           <button onClick={() => setIsOpen(true)} className="transition-transform active:scale-95 duration-200 cursor-pointer">
-            <Image src="/cookie.svg" alt="Cookie" width={56} height={56} />
+            <Image 
+              src="/cookie.svg" 
+              alt="Cookie" 
+              width={56} 
+              height={56} 
+              className="w-[36px] h-[36px] md:w-[40px] md:h-[40px] lg:w-[56px] lg:h-[56px]" 
+            />
           </button>
         )}
         
@@ -43,7 +49,7 @@ export default function Cookie() {
             <div className="flex items-center justify-end gap-2 mt-4 md:mt-0">
               <button
                 onClick={() => { setIsOpen(false); setIsModelOpen(false); }}
-                className="bg-[#2323FF] text-white px-5 py-2 rounded-xl text-[13px] font-bold active:scale-95 cursor-pointer"
+                className="bg-[#2323FF] text-white px-5 py-2 rounded-xl text-[13px] font-bold cursor-pointer"
               >
                 Accept
               </button>
@@ -91,7 +97,7 @@ export default function Cookie() {
                 </button>
                 <button
                   onClick={() => setIsModelOpen(false)}
-                  className="bg-[#2323FF] text-white px-7 py-2.5 rounded-xl text-[14px] font-bold tracking-tight active:scale-95 transition-all shadow-lg shadow-blue-600/20 cursor-pointer"
+                  className="bg-[#2323FF] text-white px-7 py-2.5 rounded-xl text-[14px] font-bold tracking-tight active:scale-95 transition-all  cursor-pointer"
                 >
                   Accept
                 </button>
@@ -109,7 +115,7 @@ function CookieSettingItem({ title, description, defaultEnabled = false }: { tit
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <div className="bg-[#0B1221] rounded-[16px] overflow-hidden transition-all border border-transparent">
+    <div className="bg-[#0B0F1A] rounded-[16px] overflow-hidden transition-all border border-transparent">
       <div className="px-6 py-5 flex items-center justify-between cursor-pointer" onClick={() => setIsExpanded(!isExpanded)}>
         <div className="flex items-center gap-4">
           <ChevronDown size={14} className={`text-white/40 transition-transform duration-300 ${isExpanded ? 'rotate-0' : '-rotate-90'}`} strokeWidth={3} />

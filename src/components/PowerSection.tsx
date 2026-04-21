@@ -12,8 +12,8 @@ const PowerSection = () => {
 
           <div className="relative w-full flex flex-col items-start line-height-[100%] text-left">
             <h1 className="font-bold text-[33px] leading-[1.05] lg:text-[74px] lg:leading-[100%] md:text-[46px] md:font-bold md:leading-[70px] text-black dark:text-white uppercase max-w-7xl tracking-normal">
-              POWER YOUR <br className="md:hidden" /> IDEAS WITH AN <br />
-              <span className="dark:text-[#8DAEFF] text-[#0037B4]">ALL-IN-ONE</span> <br className="md:hidden" /> CRYPTO <br className="md:hidden" />
+              POWER YOUR <br className="md:hidden" /> IDEAS WITH AN <br className="hidden md:block" />
+              <span className="dark:text-[#8DAEFF] text-[#0037B4]">ALL-IN-ONE</span> <br className="md:hidden" /> CRYPTO <br />
               <span className="inline-flex items-start">
                 PLATFORM
                 <span className="dark:text-[#8DAEFF] text-[#0037B4] text-[20px] lg:text-[28px] font-[700] ml-2 lg:ml-1 -mt-1 lg:-mt-2 leading-none">

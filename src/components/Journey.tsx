@@ -33,7 +33,7 @@ const Journey = () => {
                 <div className="lg:w-[260px] lg:h-[142px] md:w-[150px] md:h-[86px] w-[90px] h-[50px]  absolute top-[5%] md:top-[20%] left-[2%] md:left-[8%] transform hover:scale-105 transition-transform duration-500 z-20">
                     <AnimatePresence mode='wait'>
                         <motion.div
-                            key={Flip ? "silver" : "gold"}
+                            key={Flip ? "silver" : "platinum"}
                             initial={{ opacity: 0, y: 50 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -50 }}
@@ -41,7 +41,7 @@ const Journey = () => {
                             className='w-full h-auto drop-shadow-md'
                         >
                             <Image
-                                src={Flip ? "/Silver 1.png" : "/Gold 1.png"}
+                                src={Flip ? "/Silver 1.png" : "/platinum.svg"}
                                 alt="Silver Wallet Card"
                                 width={800}
                                 height={125}
@@ -54,7 +54,7 @@ const Journey = () => {
                 <div className="  lg:w-[260px] lg:h-[142px] md:w-[150px] md:h-[86px] w-[90px] h-[50px]  absolute top-[70%] mb-[150px]  md:top-[55%] right-[2%] md:right-[8%] transform hover:scale-105 transition-transform duration-500 z-20">
                     <AnimatePresence mode='wait'>
                         <motion.div
-                            key={Flip ? "gold" : "silver"}
+                            key={Flip ? "gold" : "palladium"}
                             initial={{ opacity: 0, y: 50 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -50 }}
@@ -62,7 +62,7 @@ const Journey = () => {
                             className='w-full h-auto drop-shadow-md'
                         >
                             <Image
-                                src={Flip ? "/Gold 1.png" : "/Silver 1.png"}
+                                src={Flip ? "/Gold 1.png" : "/Palladium.svg"}
                                 alt="Gold Wallet Card"
                                 width={250}
                                 height={125}
@@ -79,7 +79,7 @@ const Journey = () => {
                     </h2>
                 </div>
 
-                <button className="bg-white dark:bg-slate-800/10 border-[1px] border-black dark:border-white/20 text-blue-600 dark:text-blue-400 font-bold px-4 py-2 md:px-8 md:py-3 rounded-lg hover:bg-blue-50 dark:hover:bg-white/5 transition-all duration-300 shadow-sm active:scale-95 text-md">
+                <button className="bg-white dark:bg-slate-800/10 border-[1px] border-black dark:border-white/20 text-blue-600 dark:text-blue-400 font-bold px-5 py-1.5 md:px-6 md:py-2 rounded-lg hover:bg-blue-50 dark:hover:bg-white/5 transition-all duration-300 shadow-sm active:scale-95 text-[14px]">
                     Sign Up
                 </button>
             </div>

@@ -9,6 +9,18 @@ import Cookie from "./Cookie";
 const Navbar = () => {
   const { activeTitle } = useBranding();
   const [menuOpen, setMenuOpen] = useState(false);
+  const searchInputRef = React.useRef<HTMLInputElement>(null);
+
+  React.useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.key === "/" || e.key === "\\") && document.activeElement?.tagName !== "INPUT" && document.activeElement?.tagName !== "TEXTAREA") {
+        e.preventDefault();
+        searchInputRef.current?.focus();
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   return (
     <nav className="sticky top-0 z-[9999] w-full bg-[#F7F9FC] dark:bg-[#06080E] dark:border-white/5 transition-all duration-300">
@@ -36,7 +48,7 @@ const Navbar = () => {
               </AnimatePresence>
             </div>
           </Link>
-
+ 
           <div className="hidden lg:flex items-center gap-10 ml-8">
             <div className="flex items-center ml-20 gap-1.5 cursor-pointer group">
               <span className="text-[16px] font-semibold text-[#0B0F1A] dark:text-white uppercase group-hover:text-blue-600 transition-colors">
@@ -49,12 +61,13 @@ const Navbar = () => {
             </Link>
           </div>
         </div>
-
+ 
         <div className="flex items-center gap-6">
           <div className="hidden xl:flex items-center bg-gray-50/50 dark:bg-[#000411] border border-gray-200 dark:border-white/10 rounded-lg px-4 py-2 w-[380px] justify-between group focus-within:border-blue-500 transition-all">
             <div className="flex items-center gap-2.5 flex-1">
               <Search size={14} className="text-gray-400 dark:text-gray-500" />
               <input
+                ref={searchInputRef}
                 type="text"
                 placeholder="Search"
                 className="bg-transparent outline-none text-[14px] text-gray-600 dark:text-gray-400 placeholder:text-gray-400 w-full font-medium"
